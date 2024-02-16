@@ -26,6 +26,7 @@ export default function Verify() {
         } catch (error) {
             console.error(error);
             // Handle error, e.g., show an error message to the user
+            // harsh this side
         }
     }
      
