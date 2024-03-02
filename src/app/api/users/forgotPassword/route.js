@@ -31,7 +31,7 @@ export async function POST(request) {
                 port: 587,
                 auth: {
                     user: "harshjain0461@gmail.com",
-                    pass: "wjyz widw ewvc gsdc"
+                    pass: "abcd efgh ijkl mnop"
                 },
             })
 
