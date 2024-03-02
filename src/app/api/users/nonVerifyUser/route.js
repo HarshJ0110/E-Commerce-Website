@@ -1,8 +1,5 @@
 import {connect} from "@/dbConfig/dbConfig";
 import User from "@/models/userModels";
-import { NextRequest, NextResponse } from "next/server";
-import bcryptjs from "bcryptjs";
-// import { sendEmail } from "@/helpers/mailer";
 
 connect()
 
@@ -22,7 +19,7 @@ export async function PUT(request){
 
         // At this point, user is successfully updated with isVerified value
         return new Response(JSON.stringify({
-            message: `${user.managerName} is marked as verifired`,
+            message: `${user.managerName} is marked as non-verifired`,
             success: true,
             user: user
         }), { status: 200 });
