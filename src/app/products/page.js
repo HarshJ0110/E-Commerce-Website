@@ -29,10 +29,10 @@ export default function CreateProduct() {
     const onCreate = async () => {
         try {
             setLoading(true);
-            console.log(product)
+            // console.log(product)
             const response = await axios.post("/api/products/createProduct", product);
-            console.log(response);
-            console.log("Product Created Successfully", response.data);
+            // console.log(response);
+            // console.log("Product Created Successfully", response.data);
         } catch (error) {
             console.log("Product Created failed", error.message);
             // toast.error(error.message);

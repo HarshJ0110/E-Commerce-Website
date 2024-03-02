@@ -2,7 +2,6 @@ import {connect} from "@/dbConfig/dbConfig";
 import User from "@/models/userModels";
 import { NextRequest, NextResponse } from "next/server";
 import bcryptjs from "bcryptjs";
-// import { sendEmail } from "@/helpers/mailer";
 
 connect()
 
@@ -10,7 +9,6 @@ export async function POST(request){
     try {
         const reqBody = await request.json()
         const {storeName, email, password ,location,managerName, phoneNo} = reqBody
-
         const user = await User.findOne({email})
 
         if(user){
@@ -30,14 +28,7 @@ export async function POST(request){
             password: hashedPassword
         })
 
-        console.log(newUser);
-
         const savedUser = await newUser.save()
-        console.log(savedUser);
-
-        // send verification email
-
-        // await sendEmail({email, emailType: "VERIFY", userId: savedUser._id})
 
         return NextResponse.json({
             message: "User created successfully",
@@ -48,6 +39,5 @@ export async function POST(request){
     
     } catch (error) {
         return NextResponse.json({error: error.message}, {status: 500})
-
     }
 }
